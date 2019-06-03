@@ -1,0 +1,6 @@
+<h3>Shipping Prices</h3>
+<!-- 使用异步管道显示 -->
+<div class="shipping-item" *ngFor="let Shipping of shippingCosts | async">
+  <span>{{Shipping.type}}</span>
+  <span>{{Shipping.price}}</span>
+</div>

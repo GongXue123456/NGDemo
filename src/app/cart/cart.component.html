@@ -1,0 +1,23 @@
+<h3>Carts</h3>
+<p>
+  <a [routerLink]="['/shipping']">Shipping Prices</a>
+</p>
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{item.name}}</span>
+  <span>{{item.price}}</span>
+</div>
+<!-- 使用formGroup属性绑定将绑定checkoutForm到form模板中的标记。还包括“购买”按钮以提交表单。 -->
+<!-- 在使用form表单时，如果用到了form-group与formControlName，需要在app.module.ts中的import引入的不仅仅有FormsModule，还要引入ReactiveFormsModule -->
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+  <!-- 使用formControlName属性绑定绑定checkoutForm表单控件的name和address -->
+  <div>
+    <label>name:</label>
+    <input type="text" formControlName="name">
+  </div>
+  <div>
+    <label>address:</label>
+    <input type="text" formControlName="address">
+  </div>
+  <!-- 使用ngSubmit事件绑定来侦听表单提交并onSubmit()使用checkoutForm值调用方法。 -->
+  <button class="button" type="submit">submit</button>
+</form>

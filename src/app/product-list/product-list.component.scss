@@ -1,0 +1,13 @@
+.products-list {
+  border-bottom: 1px solid #666;
+  width: 100%;
+
+  app-product-alerts {
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  .products-btn {
+    margin-bottom: 15px;
+  }
+}

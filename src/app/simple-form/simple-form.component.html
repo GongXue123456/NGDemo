@@ -1,0 +1,11 @@
+<!-- <div>
+  <input type="text" #myInput [(ngModel)]="message" />
+<button (click)="onclick($event, myInput.value)">click me</button>
+<input type="text" #myInput1>
+<button (mouseover)="onclick($event, myInput1.value)">click me1</button>
+<div>{{message}}</div>
+</div> -->
+<input type="text" #myInput [(ngModel)]="message" [ngClass]="{mousedown: isMousedown}" (mousedown)="isMousedown = true"
+  (mouseup)="isMousedown = false" (mouseleave)="isMousedown = false" />
+<button (click)="update.emit({text:myInput.value})">click me</button>
+<div>{{message}}</div>
